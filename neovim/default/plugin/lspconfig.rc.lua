@@ -13,6 +13,10 @@ local on_attach = function(client, bufnr)
   end
 end
 
+
+-- Languages setup
+
+
 -- Typescript Config 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
@@ -41,9 +45,13 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 -- Go Lang setup
-  nvim_lsp.gopls.setup{
+  nvim_lsp.gopls.setup {
    on_attach = on_attach 
 }
+
+-- Go Linters Setup
+
+--  
 
 -- CSS Config
  nvim_lsp.cssls.setup {
@@ -51,7 +59,7 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 
-
+-- Docker Setup
 
 -- Docker Config
   nvim_lsp.dockerls.setup {
