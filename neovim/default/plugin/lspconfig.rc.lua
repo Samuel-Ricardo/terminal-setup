@@ -51,7 +51,30 @@ nvim_lsp.sumneko_lua.setup {
 
 -- Go Linters Setup
 
---  
+  nvim_lsp.golangci_lint_ls.setup {
+  on_attach = on_attach
+}
+
+--  nvim_lsp.goimports.setup {
+--  on_attach = on_attach
+--}
+
+-- Go Tests
+-- nvim_lsp.gotests.setup {
+--  on_attach = on_attach
+-- }
+
+-- nvim_lsp.gotestsum.setup {
+--   on_attach = on_attach
+-- }
+
+-- Go tags 
+-- nvim_lsp.gomodifytags.setup {
+--   on_attach = on_attach
+-- }
+
+
+
 
 -- CSS Config
  nvim_lsp.cssls.setup {
