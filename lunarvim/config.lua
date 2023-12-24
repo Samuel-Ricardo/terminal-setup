@@ -2,14 +2,54 @@
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
 ]]
-
 -- Style
 
--- lvim.transparent_window = true
+lvim.transparent_window = false
+
+
+-- Notification
+
+vim.opt.termguicolors = true
+require("notify").setup({})
+
+require("notify")("Hello my friend :D")
+
+require("telescope").load_extension("notify")
+-- not working :( require('telescope').extensions.notify.notify()
+
+vim.notify = require("notify")
+
+--
+
+-- LSP
+require("lvim.lsp.manager").setup("marksman", {
+  default_config = {
+    cmd = { "marksman" },
+    filetypes = { "markdown" },
+  }
+})
+
+require("lvim.lsp.manager").setup("grammarly")
+require("lvim.lsp.manager").setup("ltex")
+
+-- require("lvim.lsp.manager").setup("grammarly-languageserver", {
+--   default_config = {
+--     cmd = { "grammarly-languageserver" },
+--     filetypes = { "markdown" },
+--   }
+-- })
+-- require("lvim.lsp.manager").setup("ltex-ls", {
+--   default_config = {
+--     cmd = { "ltex-ls", "ltex-cli" },
+--     filetypes = { "markdown" },
+--   }
+-- })
+--
+
 
 -- Terminal
- 
-lvim.keys.normal_mode["<C-t>"] = ":ToggleTerm<cr>"
+
+--lvim.keys.normal_mode["<C-t>"] = ":ToggleTerm<cr>"
 
 -- Tabs
 
@@ -17,10 +57,27 @@ lvim.keys.normal_mode["<Tab>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["e"] = ":BufferKill<cr>"
 lvim.keys.normal_mode["<C-e>"] = ":q<cr>"
 
+-- GIT
+
+--lvim.keys.normal_mode["<C-g>"] = ":Telescope git_status"
+lvim.keys.normal_mode["<C-b>"] = ":Gitsigns stage_buffer <cr>"
+
+-- LSP Utils
+
+lvim.keys.normal_mode["<C-t>"] = ":Telescope lsp_type_definitions <cr>"
+lvim.keys.normal_mode["<C-g>"] = ":Telescope lsp_definitions <cr>"
+lvim.keys.normal_mode["<C-d>"] = ":Telescope lsp_references <cr>"
+lvim.keys.normal_mode["<C-G>"] = ":Telescope lsp_implementations <cr>"
+
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
+
+
+lvim.plugins = {
+  { "Exafunction/codeium.vim" }
+}
 
 -- general
 lvim.log.level = "info"
