@@ -13,6 +13,8 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
+  use 'Exafunction/codeium.vim'
+    
   use 'wbthomason/packer.nvim'
   use {
     'svrana/neosolarized.nvim',

@@ -19,7 +19,7 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = 'powershell'
+-- vim.opt.shell = 'powershell'
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
@@ -51,3 +51,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 --
 
 vim.opt.formatoptions:append { 'r' }
+
+
+

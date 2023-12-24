@@ -26,7 +26,8 @@ nvim_lsp.tsserver.setup {
 }
 
 -- Lua Config
-nvim_lsp.sumneko_lua.setup {
+-- nvim_lsp.sumneko_lua.setup { #DEPRECATED
+nvim_lsp.lua_ls.setup {
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -73,6 +74,22 @@ nvim_lsp.sumneko_lua.setup {
 --   on_attach = on_attach
 -- }
 
+
+nvim_lsp.bufls.setup {
+  on_attach = on_attach
+}
+
+nvim_lsp.sqlls.setup {
+  on_attach = on_attach
+}
+
+-- nvim_lsp.sqls.setup {
+--  on_attach = on_attach
+--}
+
+nvim_lsp.prismals.setup {
+  on_attach =  on_attach
+}
 
 
 

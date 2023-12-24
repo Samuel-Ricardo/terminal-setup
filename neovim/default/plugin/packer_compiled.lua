@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Desktop\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["codeium.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\Desktop\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\codeium.vim",
+    url = "https://github.com/Exafunction/codeium.vim"
+  },
   ["colorbuddy.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Desktop\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\colorbuddy.nvim",
