@@ -1,63 +1,39 @@
-#VAR
 
-$NVIM_CONFIG = 'C:\Users\Desktop\AppData\Local\nvim'
+# oh-my-posh init pwsh | Invoke-Expression    # init
+# Set-PoshPrompt clean-detailed               # your_theme
 
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/night-owl.omp.json" | Invoke-Expression
 
-#---SETUP---#
+### TERMINAL ICONS
 
-#setup - [oh-my-posh]
-
- oh-my-posh init pwsh | Invoke-Expression
-
- #Import-Module posh-git
- #Import-Module oh-my-posh
- Set-PoshPrompt clean-detailed   #your_theme
-
-#setup - [auto-complete] 
- 
- #AzPredictor
- Enable-AzPredictor
-
- #PSReadLine
- #Import-Module PSReadLine
- Set-PSReadLineOption -PredictionSource HistoryAndPlugin
- Set-PSReadLineOption -PredictionViewStyle ListView
- Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
- 
- #Set-PSReadLineOption -EditMode Emacs
- #Set-PSReadLineOption -BellStyle None
-
- #Fzf
- Import-Module PSFzf
- Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r' 
- 
-
-# Setup - [Icons]
 Import-Module -Name Terminal-Icons
 
+# Get-Item ./README.md
 
-# Alias
-#
-#Set-Alias vim nvim
-#Set-Alias ll ls
+# Get-ChildItem
 
-Set-Alias g git
-Set-Alias grep findstr
-Set-Alias tig 'C:/Program Files/Git/usr/bin/tig.exe'
-Set-Alias less 'C:/Program Files/Git/usr/bin/less.exe'
+# Get-ChildItem | Format-List
+
+# Get-ChildItem | Format-Wide
+
+###
+
+### CODE* SUGGESTION / AUTOCOMPLETE
+
+Enable-AzPredictor
+
+# LIST VIEW SUGGESTIONS
+
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+###
+
+### FUZZY FINDER
+
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
+
+###
 
 
-
-
-
-# Utilities
-
-function wich ($command) {
-  Get-Command -Name $command -ErrorAction SilentlyContinue |
-    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
-
-
-
-
-
+#clear && ls
